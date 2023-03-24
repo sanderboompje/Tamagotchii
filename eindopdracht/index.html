@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchii</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="name">
+            <h1 class="Naamtekst"></h1>
+            <form class="Naampet">
+                <input class="NaamInput" type="text" placeholder="name your pet">
+                <input class="ButtonNaam" type="submit" value="submit">
+            </form>
+        </div>
+        <div class="box spring">
+            <img class="pet" id="pet" src="img/Fox_wait.png" alt="fox">
+            <div class="stats">
+                <p>Happiness: <span id="happiness">50</span></p>
+                <p>Energy: <span id="energy">50</span></p>
+                <p>Hunger: <span id="hunger">50</span></p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="buttons">
+        <button class="actions" id="sleep">Sleep</button>
+        <button class="actions" id="feed">Feed</button>
+        <button class="actions" id="play">Play</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

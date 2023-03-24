@@ -1,0 +1,105 @@
+/* import Pppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    margin: 0;
+    background-color: #333;
+    font-family: "Poppins";
+    overflow: hidden;
+}
+
+/* container om alle items */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* een div met alles over de naam erin */
+.name {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    margin-top: 2em;
+    margin-bottom: 10px;
+}
+
+.name h1 {
+    color: white;
+    font-weight: 700;
+}
+
+/* de box waar het vosje in zit */
+.box {
+    position: absolute;
+    height: 100vh;
+    width: 90vw;
+    scale: 0.6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* de verschillende seizoens achtergronden */
+.spring {
+    background-image: url("/eindopdracht/img/BG_spring.png");
+}
+
+.summer {
+    background-image: url("/eindopdracht/img/BG_summer.png");
+}
+
+.autumn {
+    background-image: url("/eindopdracht/img/BG_autumn.png");
+}
+
+.winter {
+    background-image: url("/eindopdracht/img/BG_winter.png");
+}
+
+/* om dingen weg te halen */
+.hidden {
+    display: none;
+}
+
+/* grootte en positie van vosje */
+.pet {
+    height: 50vh;
+    width: auto;
+    position: fixed;
+    left: 40%;
+    right: 40%;
+    bottom: 0;
+}
+
+/* de happinness, sleep en hunger locatie */
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-size: 120%;
+    color: white;
+    right: 0;
+    top: 0;
+    position: fixed;
+    background-color: #7a7a7a;
+    height: 22vh;
+    width: 15vw;
+    z-index: 2;
+}
+
+/* de div waar de button acties in staan */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 70vh;
+}
+
+/* de button acties styling */
+.actions {
+    padding: 28px;
+    font-family: "Poppins";
+    font-size: 1em;
+}
