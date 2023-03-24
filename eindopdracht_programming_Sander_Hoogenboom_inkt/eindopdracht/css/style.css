@@ -42,19 +42,19 @@ body {
 
 /* de verschillende seizoens achtergronden */
 .spring {
-    background-image: url("img/BG_spring.png");
+    background-image: url("/eindopdracht/img/BG_spring.png");
 }
 
 .summer {
-    background-image: url("img/BG_summer.png");
+    background-image: url("/eindopdracht/img/BG_summer.png");
 }
 
 .autumn {
-    background-image: url("img/BG_autumn.png");
+    background-image: url("/eindopdracht/img/BG_autumn.png");
 }
 
 .winter {
-    background-image: url("img/BG_winter.png");
+    background-image: url("/eindopdracht/img/BG_winter.png");
 }
 
 /* om dingen weg te halen */
