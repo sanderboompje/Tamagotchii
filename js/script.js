@@ -119,6 +119,7 @@ playElement.addEventListener("click", play)
 const seasons = ["spring", "summer", "autumn", "winter"];
 
 // cycle door de verschillende seizoenen
+// 3
 
 let i = 0;
 
@@ -133,3 +134,4 @@ setInterval(function backgroundcycle() {
 
 // 1 Hulp van Evi
 // 2 Hulp van Ruben
+// 3 Hulp van Sem
