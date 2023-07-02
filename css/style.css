@@ -28,6 +28,11 @@ body {
     font-weight: 700;
 }
 
+#timer {
+    margin-left: 30%;
+    color: white;
+    font-weight: 500;
+}
 /* de box waar het vosje in zit */
 .box {
     position: absolute;
@@ -42,19 +47,19 @@ body {
 
 /* de verschillende seizoens achtergronden */
 .spring {
-    background-image: url("/img/BG_spring.png");
+    background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_spring.png");
 }
 
 .summer {
-    background-image: url("/img/BG_summer.png");
+    background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_summer.png");
 }
 
 .autumn {
-    background-image: url("/img/BG_autumn.png");
+    background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_autumn.png");
 }
 
 .winter {
-    background-image: url("/img/BG_winter.png");
+    background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_winter.png");
 }
 
 /* om dingen weg te halen */
