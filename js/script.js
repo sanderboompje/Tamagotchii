@@ -37,7 +37,7 @@ let isSeasonsStopped = false;
 const block = document.getElementById('blok');
 
 // Functie om de timer te stoppen
-function stopTimer() {
+function gameOver() {
     if (happiness === 0 && energy === 0) {
       clearInterval(timerInterval);
       console.log("Timer is gestopt.");
@@ -55,7 +55,6 @@ function stopTimer() {
       feedElement.classList.add('hidden');
       playElement.classList.add('hidden');
       restartElement.classList.remove('hidden')
-
     }
   }
   
@@ -71,8 +70,6 @@ function updateStats() {
   happinessEl.textContent = happiness;
   const energyEl = document.getElementById("energy");
   energyEl.textContent = energy;
-  
-  stopTimer(); // Controleer of de timer moet worden gestopt
 }
 
 // Slaapfunctie
@@ -184,7 +181,17 @@ window.addEventListener('DOMContentLoaded', function() {
                                  seconds.toString().padStart(2, '0');
   
       // Controleer of de timer moet worden gestopt
-      stopTimer();
+      gameOver();
+      return;
+    }
+  });
+
+// Zet Happiness en energy op 0
+document.addEventListener("keydown", function (event) {
+    if (event.key === "d") {
+      happiness = 0;
+      energy = 0;
+      updateStats();
     }
   });
 
