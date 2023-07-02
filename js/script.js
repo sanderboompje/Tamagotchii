@@ -3,11 +3,11 @@ const naamPet = document.querySelector('.Naampet');
 const naamButton = document.querySelector('.ButtonNaam');
 const naamInput = document.querySelector('.NaamInput');
 const naam = document.querySelector('.Naamtekst');
-const fox = document.querySelector('.pet');
 
 naamPet.addEventListener('submit', function (event) {
     event.preventDefault();
     const naamHolder = naamInput.value;
+    const pet = document.getElementById("pet");
     console.log(naamInput.value);
     if (naamInput.value === "") {
         naam.textContent = 'Je hebt geen naam gegeven';
@@ -15,7 +15,8 @@ naamPet.addEventListener('submit', function (event) {
     } else {
         naam.textContent = naamHolder;
         naamPet.classList.add('hidden');
-        fox.src = "img/Fox.png";
+        pet.src = "img/Fox.png";
+
     }
 });
 
