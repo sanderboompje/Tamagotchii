@@ -15,7 +15,7 @@ naamPet.addEventListener('submit', function (event) {
     } else {
         naam.textContent = naamHolder;
         naamPet.classList.add('hidden');
-        fox.src = "img/fox.png";
+        fox.src = "img/Fox.png";
     }
 });
 
