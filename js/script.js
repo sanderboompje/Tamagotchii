@@ -25,17 +25,43 @@ let happiness = 50;
 let energy = 50;
 let isAsleep = false;
 
+// Knoppen met acties
+const sleepElement = document.getElementById("sleep");
+const feedElement = document.getElementById("feed");
+const playElement = document.getElementById("play");
+const restartElement = document.getElementById("restart")
+
 // Functie om de timer te stoppen
 let timerInterval;
+let isSeasonsStopped = false;
+const block = document.getElementById('blok');
 
+// Functie om de timer te stoppen
 function stopTimer() {
-  if (happiness === 0 && energy === 0) {
-    clearInterval(timerInterval);
-    console.log("Timer is gestopt.");
-    const backgroundElement = document.querySelector(".box");
-    backgroundElement.classList.add("BG_Ded");
+    if (happiness === 0 && energy === 0) {
+      clearInterval(timerInterval);
+      console.log("Timer is gestopt.");
+      const pet = document.getElementById("pet");
+      pet.src = "img/Fox_Ded.png";
+      const backgroundElement = document.querySelector(".box");
+      backgroundElement.classList.add("Ded");
+      backgroundElement.classList.remove(seasons[i]);
+      isSeasonsStopped = true;
+  
+      const naamHolder = naam.textContent;
+      naam.textContent = "RIP " + naamHolder;
+
+      sleepElement.classList.add('hidden');
+      feedElement.classList.add('hidden');
+      playElement.classList.add('hidden');
+      restartElement.classList.remove('hidden')
+
+    }
   }
-}
+  
+  function restartPage(){
+    window.location.reload();
+} 
 
 // Update van statistieken in HTML
 function updateStats() {
@@ -117,28 +143,28 @@ setInterval(function timeStats() {
 }, 10000);
 updateStats();
 
-// Knoppen met acties
-const sleepElement = document.getElementById("sleep");
-const feedElement = document.getElementById("feed");
-const playElement = document.getElementById("play");
-
 sleepElement.addEventListener("click", sleep);
 feedElement.addEventListener("click", feed);
 playElement.addEventListener("click", play);
+restartElement.addEventListener("click", restartPage);
 
 // Seizoensarray voor seizoenen
 const seasons = ["spring", "summer", "autumn", "winter"];
 
 // Doorloop de verschillende seizoenen
 let i = 0;
-setInterval(function backgroundCycle() {
+let seasonsInterval;
+
+function startSeasonsCycle() {
+  if (!isSeasonsStopped) {
     const backgroundElement = document.querySelector(".box");
     backgroundElement.classList.remove(seasons[i]);
-    i
-
- = (i + 1) % seasons.length;
+    i = (i + 1) % seasons.length;
     backgroundElement.classList.add(seasons[i]);
-}, 20000);
+  }
+}
+
+seasonsInterval = setInterval(startSeasonsCycle, 20000);
 
 // Timer voor tijdsduur bijhouden
 window.addEventListener('DOMContentLoaded', function() {

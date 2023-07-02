@@ -46,24 +46,29 @@ body {
 }
 
 /* de verschillende seizoens achtergronden */
+.Ded {
+    background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_Ded.jpg");   
+    z-index: 2;
+}
+
 .spring {
     background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_spring.png");
+    z-index: 1;
 }
 
 .summer {
     background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_summer.png");
+    z-index: 1;
 }
 
 .autumn {
     background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_autumn.png");
+    z-index: 1;
 }
 
 .winter {
     background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_winter.png");
-}
-
-.Ded {
-    background-image: ;
+    z-index: 1;
 }
 
 /* om dingen weg te halen */
