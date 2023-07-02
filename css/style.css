@@ -62,6 +62,10 @@ body {
     background-image: url("https://raw.githubusercontent.com/sanderboompje/Tamagotchii/main/img/BG_winter.png");
 }
 
+.Ded {
+    background-image: ;
+}
+
 /* om dingen weg te halen */
 .hidden {
     display: none;

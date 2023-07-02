@@ -25,14 +25,28 @@ let happiness = 50;
 let energy = 50;
 let isAsleep = false;
 
+// Functie om de timer te stoppen
+let timerInterval;
+
+function stopTimer() {
+  if (happiness === 0 && energy === 0) {
+    clearInterval(timerInterval);
+    console.log("Timer is gestopt.");
+    const backgroundElement = document.querySelector(".box");
+    backgroundElement.classList.add("BG_Ded");
+  }
+}
+
 // Update van statistieken in HTML
 function updateStats() {
-    const hungerEl = document.getElementById("hunger");
-    hungerEl.textContent = hunger;
-    const happinessEl = document.getElementById("happiness");
-    happinessEl.textContent = happiness;
-    const energyEl = document.getElementById("energy");
-    energyEl.textContent = energy;
+  const hungerEl = document.getElementById("hunger");
+  hungerEl.textContent = hunger;
+  const happinessEl = document.getElementById("happiness");
+  happinessEl.textContent = happiness;
+  const energyEl = document.getElementById("energy");
+  energyEl.textContent = energy;
+  
+  stopTimer(); // Controleer of de timer moet worden gestopt
 }
 
 // Slaapfunctie
@@ -41,6 +55,8 @@ function sleep() {
         isAsleep = true;
         const pet = document.getElementById("pet");
         pet.src = "img/Fox_sleep.png";
+        var sleep = new Audio("sound/sleep.mp3");
+        sleep.play();
         setTimeout(function sleepStats() {
             isAsleep = false;
             energy += 15;
@@ -58,6 +74,8 @@ function feed() {
         energy += 10;
         const pet = document.getElementById("pet");
         pet.src = "img/Fox_eat.png";
+        var eat = new Audio("sound/eat.mp3");
+        eat.play();
         setTimeout(function feedStats() {
             pet.src = "img/Fox.png";
             updateStats();
@@ -72,7 +90,9 @@ function play() {
         happiness += 10;
         energy -= 15;
         const pet = document.getElementById("pet");
-        pet.src = "img/Fox_play.png";
+        pet.src = "img/Fox_play.png";      
+        var playing = new Audio("sound/play.mp3");
+        playing.play();
         setTimeout(function playStats() {
             pet.src = "img/Fox.png";
             updateStats();
@@ -123,27 +143,24 @@ setInterval(function backgroundCycle() {
 // Timer voor tijdsduur bijhouden
 window.addEventListener('DOMContentLoaded', function() {
     var timerElement = document.getElementById('timer');
-
-    // Pakt de starttijd als het document is geladen
     var startTime = new Date().getTime();
-
-    setInterval(updateTimer, 1000);
-
+  
+    timerInterval = setInterval(updateTimer, 1000);
+  
     function updateTimer() {
-        // Pakt de huidige tijd
-        var currentTime = new Date().getTime();
-        // Rekent de afgelopen tijd af
-        var elapsedTime = currentTime - startTime;
-
-        // Rekent uren, minuten en secondes uit
-        var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
-
-        // Formateer de tijd
-        timerElement.textContent =  minutes.toString().padStart(2, '0') + ':' +
-                                    seconds.toString().padStart(2, '0');
+      var currentTime = new Date().getTime();
+      var elapsedTime = currentTime - startTime;
+  
+      var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+  
+      timerElement.textContent = minutes.toString().padStart(2, '0') + ':' +
+                                 seconds.toString().padStart(2, '0');
+  
+      // Controleer of de timer moet worden gestopt
+      stopTimer();
     }
-});
+  });
 
 // Bronnenlijst:
 // 1 Hulp van Evi
